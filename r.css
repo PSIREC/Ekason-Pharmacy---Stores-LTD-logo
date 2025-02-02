@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+:root {
+    --background-color: #333738;
+    --border-color:  #400b7c;
+}
+
+/** Global Selector "*" **/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    /** Body tag display setting **/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    /** Body height **/
+    height: 100vh;
+}
+
+/** Styling for all contents within body tag **/
+
+.container {
+    position: relative;
+    width: 98%;
+    height: 98%;
+    /** Border of Container **/
+    /* border: 3px solid var(--border-color);
+    border-radius: 10px; */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    background-image: url(/default.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    inset: 0;
+    opacity: 0.4;
+}
+
+/* Styling for all contents within container class */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    font-family: Parkinsans;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 0px;
+}
+
+.nav li {
+    transform: scale(.8);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav li:hover {
+    transform: scale(1);
+}
+
+.nav a {
+    width: 100%;
+    text-decoration: none;
+    color: #c0c0f8;
+    cursor: pointer;
+    height: 100%;
+    padding: 7px;
+    border-radius: 25px;
+}
+
+.nav a:hover {
+    color: white;
+    background: linear-gradient(180deg, #411e68, rgb(68, 0, 255));
+}
+
+/* Styling for menu buttons */
+
+.menu {
+    display: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: #c0c0f8;
+}
+
+/* Media style section */
+
+@media  only screen and (max-width: 1024px) {
+    .nav ul {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    
+}
